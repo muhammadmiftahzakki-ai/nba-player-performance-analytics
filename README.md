@@ -1,103 +1,109 @@
-# NBA Player Performance Analytics  
-Machine Learning–Based Points Per Game Prediction System
+# NBA Player Performance Analytics
 
-## Identitas Pengembang
-
-Nama : Mayta Nohan Griselda  
-NIM : 2441044  
-Program Studi : Sistem Informasi  
-Perguruan Tinggi : STMIK AMIK Bandung  
-Mata Kuliah : Machine Learning  
+**Nama** : Muhammad Miftah Zakki  
+**NIM** : 2441036  
+**Program Studi** : Sistem Informasi  
+**Perguruan Tinggi** : STMIK AMIK Bandung  
+**Mata Kuliah** : Machine Learning  
 
 ---
 
-## Deskripsi Proyek
+## Pendahuluan
 
-NBA Player Performance Analytics merupakan sebuah aplikasi web interaktif yang dirancang untuk memprediksi **Points Per Game (PPG)** pemain NBA menggunakan pendekatan **Machine Learning**, khususnya algoritma **Linear Regression**.  
-Aplikasi ini menggabungkan tampilan frontend yang modern dan dinamis dengan backend berbasis FastAPI, serta model machine learning yang telah dilatih menggunakan data statistik pemain NBA.
+NBA Player Performance Analytics merupakan sebuah aplikasi berbasis web yang dikembangkan untuk menganalisis dan memprediksi performa pemain NBA, khususnya dalam hal jumlah poin per pertandingan atau Points Per Game (PPG). Sistem ini memanfaatkan pendekatan Machine Learning untuk mengolah data statistik pemain dan menghasilkan prediksi yang dapat digunakan sebagai gambaran performa pemain di lapangan.
 
-Tujuan utama dari proyek ini adalah untuk menunjukkan bagaimana data performa pemain seperti **Minutes Played**, **Age**, dan **Games Played** dapat digunakan untuk memprediksi rata-rata poin yang dicetak oleh seorang pemain. Selain itu, proyek ini juga menekankan aspek **Explainable AI**, sehingga hasil prediksi tidak hanya ditampilkan dalam bentuk angka, tetapi juga disertai penjelasan logis yang mudah dipahami.
+Aplikasi ini dikembangkan sebagai bagian dari tugas mata kuliah Machine Learning dengan tujuan untuk menerapkan teori pembelajaran mesin ke dalam sebuah sistem nyata yang terintegrasi. Melalui proyek ini, mahasiswa diharapkan dapat memahami alur kerja Machine Learning secara utuh, mulai dari pengolahan data, pelatihan model, hingga implementasi model ke dalam aplikasi web.
+
+Selain sebagai tugas akademik, sistem ini juga dirancang dengan antarmuka yang interaktif dan mudah digunakan. Pengguna dapat memasukkan data statistik pemain dan secara langsung memperoleh hasil prediksi, sehingga konsep Machine Learning dapat dipahami tidak hanya secara teoritis tetapi juga secara praktis.
 
 ---
 
-## Latar Belakang
+## Tujuan dan Manfaat Sistem
 
-Dalam dunia olahraga profesional seperti NBA, analisis performa pemain sangat penting untuk pengambilan keputusan, baik oleh pelatih, manajemen tim, maupun analis data. Dengan meningkatnya ketersediaan data statistik pemain, pendekatan berbasis Machine Learning menjadi solusi yang efektif untuk memprediksi performa di masa depan.
+Tujuan utama dari pengembangan sistem ini adalah untuk membangun sebuah aplikasi prediksi performa pemain NBA berbasis web menggunakan metode Machine Learning. Sistem ini bertujuan untuk menunjukkan bagaimana data statistik sederhana dapat digunakan untuk menghasilkan prediksi performa pemain secara kuantitatif.
 
-Linear Regression dipilih dalam proyek ini karena memiliki hubungan yang cukup linear antara variabel input dan output, serta mudah diinterpretasikan. Model ini cocok digunakan untuk dataset berukuran menengah dan mampu memberikan hasil prediksi yang stabil tanpa kompleksitas berlebih.
+Manfaat dari sistem ini antara lain memberikan pemahaman praktis mengenai penerapan Machine Learning, khususnya regresi linear, dalam dunia nyata. Selain itu, proyek ini juga melatih kemampuan integrasi antara frontend, backend, dan model Machine Learning dalam satu sistem yang utuh dan terstruktur.
+
+---
+
+## Fitur Utama Sistem
+
+Sistem NBA Player Performance Analytics memiliki beberapa fitur utama yang mendukung proses prediksi dan analisis performa pemain NBA. Fitur-fitur tersebut dirancang agar pengguna dapat berinteraksi langsung dengan sistem dan memahami hasil prediksi dengan mudah.
+
+Fitur pertama adalah **input data statistik pemain secara interaktif**, di mana pengguna dapat memasukkan nilai Minutes Played, Player Age, dan Games Played melalui slider yang tersedia pada halaman web. Penggunaan slider ini memudahkan pengguna dalam melakukan simulasi berbagai kondisi performa pemain.
+
+Fitur kedua adalah **prediksi Points Per Game (PPG)** menggunakan model Machine Learning. Setelah data dimasukkan, sistem akan memproses data tersebut melalui backend dan menghasilkan nilai prediksi PPG secara real-time tanpa perlu memuat ulang halaman.
+
+Fitur berikutnya adalah **visualisasi data dan hasil prediksi**, yang ditampilkan dalam bentuk grafik menggunakan Chart.js. Visualisasi ini membantu pengguna memahami kontribusi masing-masing variabel terhadap performa pemain secara lebih intuitif.
+
+Selain itu, sistem juga menyediakan fitur **Explainable AI**, yaitu penjelasan sederhana mengenai pengaruh setiap variabel input terhadap hasil prediksi. Fitur ini bertujuan agar pengguna tidak hanya melihat hasil prediksi, tetapi juga memahami alasan di balik prediksi tersebut.
+
+Sistem juga dilengkapi dengan **desain antarmuka modern dan responsif**, menggunakan Tailwind CSS, sehingga dapat diakses dengan nyaman melalui berbagai ukuran layar. Ditambahkan pula efek visual dan audio latar untuk meningkatkan pengalaman pengguna saat menggunakan aplikasi.
+
+---
+
+## Metode Machine Learning
+
+Metode Machine Learning yang digunakan dalam proyek ini adalah Linear Regression. Metode ini dipilih karena memiliki konsep yang sederhana, mudah dipahami, dan sangat cocok untuk tujuan pembelajaran. Linear Regression memodelkan hubungan linear antara variabel input dan output, sehingga hasil prediksi dapat dijelaskan secara matematis.
+
+Linear Regression juga memiliki kompleksitas yang rendah dan relatif stabil ketika digunakan pada dataset berukuran kecil hingga menengah. Setiap variabel input memiliki bobot tertentu yang memengaruhi hasil prediksi Points Per Game, sehingga metode ini mudah diinterpretasikan dan dianalisis.
+
+---
+
+## Dataset dan Variabel
+
+Dataset yang digunakan dalam sistem ini berasal dari data statistik pemain NBA yang disimpan dalam file CSV. Dataset tersebut mencakup beberapa variabel utama yang digunakan sebagai input dalam proses prediksi.
+
+Variabel input yang digunakan meliputi Minutes Played, Player Age, dan Games Played. Ketiga variabel ini dipilih karena memiliki pengaruh yang cukup signifikan terhadap performa mencetak poin seorang pemain NBA. Variabel output dari dataset ini adalah Points Per Game (PPG), yang digunakan sebagai target prediksi model.
+
+---
+
+## Proses Training Model
+
+Proses pelatihan model dilakukan menggunakan bahasa pemrograman Python dengan bantuan library Pandas dan Scikit-learn. Dataset dibagi menjadi data latih dan data uji untuk memastikan model dapat mempelajari pola hubungan antar variabel dengan baik.
+
+Model Linear Regression kemudian dilatih menggunakan data latih, dan dilakukan pengujian menggunakan data uji untuk melihat performa prediksi. Setelah model selesai dilatih, model disimpan dalam bentuk file menggunakan joblib agar dapat digunakan kembali oleh backend tanpa perlu melakukan pelatihan ulang.
 
 ---
 
 ## Arsitektur Sistem
 
-Sistem ini dibangun menggunakan tiga komponen utama, yaitu frontend, backend, dan model machine learning.
+Arsitektur sistem NBA Player Performance Analytics terdiri dari tiga komponen utama, yaitu frontend, backend, dan model Machine Learning. Frontend berfungsi sebagai antarmuka pengguna, backend sebagai penghubung dan pemroses data, serta model Machine Learning sebagai inti dari sistem prediksi.
 
-Frontend berfungsi sebagai antarmuka pengguna yang memungkinkan pengguna memasukkan data performa pemain dan melihat hasil prediksi secara visual. Backend berperan sebagai penghubung antara frontend dan model machine learning, sedangkan model machine learning bertugas melakukan proses prediksi berdasarkan data yang diterima.
-
-Alur kerja sistem dimulai ketika pengguna mengatur nilai input pada slider di frontend, kemudian data tersebut dikirim ke backend menggunakan metode HTTP POST. Backend memproses data tersebut menggunakan model regresi linear dan mengembalikan hasil prediksi ke frontend untuk ditampilkan.
+Frontend dan backend berkomunikasi melalui REST API. Data input dari pengguna dikirim dalam format JSON ke backend, kemudian diproses oleh model Machine Learning, dan hasil prediksi dikirim kembali ke frontend untuk ditampilkan kepada pengguna.
 
 ---
 
-## Frontend (HTML, Tailwind CSS, JavaScript)
+## Backend dengan FastAPI
 
-Frontend aplikasi ini dibangun menggunakan HTML, Tailwind CSS, dan JavaScript, dengan tampilan visual yang modern dan interaktif.  
-Penggunaan Tailwind CSS memudahkan pembuatan desain responsif dan konsisten, sementara JavaScript digunakan untuk mengelola interaksi pengguna, animasi, serta komunikasi dengan backend.
-
-Fitur utama pada frontend meliputi input slider untuk Minutes Played, Age, dan Games Played, tombol untuk menjalankan prediksi, tampilan hasil prediksi poin, grafik visual menggunakan Chart.js, serta efek animasi dan background dinamis yang meningkatkan pengalaman pengguna.  
-Selain itu, terdapat fitur musik latar yang dapat diaktifkan atau dinonaktifkan oleh pengguna.
+Backend aplikasi dikembangkan menggunakan framework FastAPI. FastAPI dipilih karena memiliki performa yang tinggi, ringan, dan sangat cocok untuk pengembangan REST API. Backend bertanggung jawab untuk menerima data input, memvalidasi data, menjalankan proses prediksi, dan mengembalikan hasil prediksi ke frontend.
 
 ---
 
-## Backend (FastAPI)
+## Frontend Aplikasi
 
-Backend pada proyek ini dibangun menggunakan framework **FastAPI** karena memiliki performa tinggi, mudah digunakan, dan sangat cocok untuk pengembangan REST API.  
-FastAPI menerima data input dari frontend dalam format JSON, kemudian memproses data tersebut menggunakan model machine learning yang telah dilatih sebelumnya.
+Frontend aplikasi dibangun menggunakan HTML, Tailwind CSS, dan JavaScript. Antarmuka dirancang agar interaktif dan mudah digunakan, dengan penggunaan slider, animasi, grafik, serta audio latar untuk meningkatkan pengalaman pengguna.
 
-Untuk menghindari masalah komunikasi antar domain, backend juga dikonfigurasi menggunakan **CORS Middleware**, sehingga frontend dapat mengakses API tanpa kendala. Endpoint utama pada backend adalah `/predict`, yang berfungsi untuk menerima data pemain dan mengembalikan hasil prediksi Points Per Game.
-
----
-
-## Model Machine Learning
-
-Model yang digunakan dalam proyek ini adalah **Linear Regression** dari library scikit-learn.  
-Dataset yang digunakan berisi data statistik pemain NBA, dengan variabel input berupa **BASE_MIN**, **BASE_AGE**, dan **BASE_GP**, serta variabel target **BASE_PTS**.
-
-Data dibagi menjadi data latih dan data uji menggunakan metode train-test split. Setelah model dilatih, model disimpan menggunakan joblib agar dapat digunakan kembali oleh backend tanpa perlu melatih ulang setiap kali aplikasi dijalankan.
-
-Pemilihan Linear Regression didasarkan pada kemudahan interpretasi, stabilitas model, serta kesesuaian dengan karakteristik data yang memiliki hubungan linier antar variabel.
+Pengguna dapat langsung melihat hasil prediksi Points Per Game setelah menekan tombol prediksi, tanpa perlu memuat ulang halaman.
 
 ---
 
-## Alur Prediksi
+## Evaluasi dan Keterbatasan Sistem
 
-Proses prediksi dimulai ketika pengguna menekan tombol "RUN PREDICTION" pada halaman web.  
-Data input yang dipilih pengguna dikirim ke backend melalui API FastAPI. Backend kemudian memformat data tersebut dan mengirimkannya ke model machine learning untuk diprediksi.
+Sistem ini masih memiliki beberapa keterbatasan, antara lain jumlah variabel input yang masih terbatas serta penggunaan metode Machine Learning yang relatif sederhana. Dataset yang digunakan juga belum mencakup seluruh faktor yang memengaruhi performa pemain NBA.
 
-Hasil prediksi berupa nilai Points Per Game dikembalikan ke frontend dan ditampilkan secara visual, lengkap dengan grafik dan penjelasan sederhana mengenai pengaruh masing-masing variabel terhadap hasil prediksi.
-
----
-
-## Explainable AI
-
-Untuk meningkatkan pemahaman pengguna, aplikasi ini menyediakan penjelasan sederhana mengenai hasil prediksi.  
-Penjelasan ini menjelaskan bahwa semakin tinggi Minutes Played, semakin besar peluang pemain mencetak poin, Games Played membantu menstabilkan performa, dan Age mempengaruhi stamina serta efisiensi pemain.
-
-Pendekatan ini bertujuan agar hasil Machine Learning tidak hanya menjadi angka semata, tetapi juga dapat dipahami secara logis oleh pengguna.
+Oleh karena itu, hasil prediksi yang dihasilkan oleh sistem ini tidak dimaksudkan sebagai prediksi resmi, melainkan sebagai simulasi dan sarana pembelajaran.
 
 ---
 
-## Cara Menjalankan Aplikasi
+## Pengembangan Sistem ke Depan
 
-Langkah pertama adalah menjalankan proses training model untuk menghasilkan file model regresi. Setelah model berhasil disimpan, backend FastAPI dijalankan menggunakan perintah uvicorn.  
-Selanjutnya, frontend dapat dibuka melalui browser untuk mulai menggunakan aplikasi.
-
-Pastikan backend berjalan terlebih dahulu sebelum menjalankan frontend agar proses prediksi dapat berjalan dengan baik.
+Pengembangan lebih lanjut dapat dilakukan dengan menambahkan variabel input lain, menggunakan dataset yang lebih besar dan lebih kompleks, serta menerapkan algoritma Machine Learning yang lebih canggih. Selain itu, sistem juga dapat dikembangkan dengan fitur perbandingan performa antar pemain atau prediksi untuk beberapa pertandingan sekaligus.
 
 ---
 
 ## Kesimpulan
 
-NBA Player Performance Analytics berhasil mengimplementasikan konsep Machine Learning ke dalam aplikasi web interaktif.  
-Dengan menggabungkan Linear Regression, FastAPI, dan frontend modern, aplikasi ini mampu memberikan prediksi performa pemain NBA secara sederhana, cepat, dan mudah dipahami.
+NBA Player Performance Analytics merupakan aplikasi berbasis web yang berhasil mengimplementasikan konsep Machine Learning dalam memprediksi performa pemain NBA. Sistem ini menunjukkan bagaimana model Machine Learning dapat diintegrasikan dengan frontend dan backend secara utuh.
 
-Proyek ini diharapkan dapat menjadi contoh penerapan Machine Learning dalam bidang olahraga, serta menjadi dasar untuk pengembangan sistem analitik yang lebih kompleks di masa depan.
+Proyek ini diharapkan dapat menjadi media pembelajaran yang bermanfaat dalam memahami penerapan Machine Learning dalam pengembangan aplikasi berbasis web.
